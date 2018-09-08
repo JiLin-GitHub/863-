@@ -1,0 +1,9 @@
+---- sendOriginalDataFD Matches (8 in 0 files) ----
+Opcua_str_prase_new.c (c:\users\administrator\desktop\southint_12.1\southint)://struct argument sendOriginalDataFD;
+Opcua_str_prase_new.c (c:\users\administrator\desktop\southint_12.1\southint):					if(SocketConnected(sendOriginalDataFD.fd)) {
+Opcua_str_prase_new.c (c:\users\administrator\desktop\southint_12.1\southint):					//if(sendOriginalDataFD.fd > 0) {
+Opcua_str_prase_new.c (c:\users\administrator\desktop\southint_12.1\southint):						ret_send = send(sendOriginalDataFD.fd, p, num, 0);						
+Opcua_str_prase_new.c (c:\users\administrator\desktop\southint_12.1\southint):							close(sendOriginalDataFD.fd);
+Opcua_str_prase_new.c (c:\users\administrator\desktop\southint_12.1\southint):							printf("write sendOriginalDataFD_fd! ret_send=%d\n",ret_send);
+Opcua_str_prase_new.c (c:\users\administrator\desktop\southint_12.1\southint):	sendOriginalDataFD.port = S_PORT;
+Opcua_str_prase_new.c (c:\users\administrator\desktop\southint_12.1\southint):	pthread_create(&original_data_outpit_id,NULL,(void *)creatserver,&sendOriginalDataFD);

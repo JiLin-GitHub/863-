@@ -1,0 +1,4 @@
+---- PRODUCT_URI Matches (3 in 1 files) ----
+Open62541.c (e:\博士期间\工程项目\opc ua\southint):#define PRODUCT_URI "urn:unconfigured:open62541"
+Open62541.c (e:\博士期间\工程项目\opc ua\southint):        .productUri = UA_STRING_STATIC(PRODUCT_URI),
+Open62541.c (e:\博士期间\工程项目\opc ua\southint):        .productUri = UA_STRING_STATIC(PRODUCT_URI),
