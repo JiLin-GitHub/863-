@@ -1,0 +1,17 @@
+chmod 777 opcua ping.sh
+
+chmod 777 hello ping ping5
+
+
+ln -s /etc/init.d/hello /etc/rc.d/S50hello
+
+ln -s /etc/init.d/ping /etc/rc.d/S49ping
+
+ln -s /etc/init.d/ping5 /etc/rc.d/S99ping5
+
+
+
+
+7VTsfYED
+
+ping 10.10.5.37

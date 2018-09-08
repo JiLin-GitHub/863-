@@ -1,0 +1,9 @@
+#!/bin/sh /etc/rc.common
+
+START=49
+start()
+{
+	echo start
+	/test/ping.sh &
+}
+

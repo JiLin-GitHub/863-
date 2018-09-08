@@ -1,0 +1,38 @@
+1、Readdata（）：接收网口数据部分，按照事先协商的数据包序列，接收指定长度、类型的数据
+	问题：后面有可能会有浮点数，有符号数，如何判断、接收。
+		对方传来的数据是字符流还是十六进制数。
+
+2、praseStrToData()：接收数据的复制，这里涉及核心的数据格式转换、再封装。
+	(1):数据进来后，字符序列解封装，依次放入对应数组；如
+			boottime[0]=shang;	//year
+			boottime[1]=yu;
+			boottime[2]=str[6];	//month
+			boottime[3]=str[8];	//day
+	(2):需要格式转换，在新的数组中按照指定格式转换，并放在新的数组，给后面诊断窗口和OPC-UA用；
+			while(i<len)
+			{
+				if(boottime[i]<10)
+				{
+					sprintf(p,"%d",boottime[i]);
+					boottime_1[j] = '0';
+					boottime_1[++j] = p[0];
+					j++;
+					i++;
+				}
+				else if(boottime[i] > 9)
+				{
+					sprintf(p,"%d",boottime[i]);
+					boottime_1[j] = p[0];
+					boottime_1[++j] = p[1];
+					j++;
+					i++;
+				}
+			}
+			memcpy(source[0].string_data,boottime_1,14);		//opc-ua，诊断窗口用
+			boottime_1[14] = ' ';
+			NewData[0] = '?';						
+			memcpy(NewData+1,boottime_1,15);			//tcp/ip发送 诊断窗口
+	(3):处理（正负）浮点数据情况
+	(4):TCP/IP调试字符串固定格式：“？aaa ... bbb！”
+
+3、TCP/IP只用来调试，还需外加一个OPC-UA专用端口

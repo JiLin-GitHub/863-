@@ -1,0 +1,4 @@
+#!/bin/sh 
+sleep 3
+ping 10.10.5.37 -c 5
+
